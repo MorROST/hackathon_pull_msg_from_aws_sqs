@@ -93,4 +93,4 @@ while True:
             )
     else:
         # There are no messages in the queue, so sleep for a while
-        time.sleep(10)
+        time.sleep(3)
