@@ -26,7 +26,7 @@ def get_yesterday_incidents():
     current_time = datetime.now().date()
     today_date = current_time.strftime("%d/%m/%Y")
     yes_date = (current_time - timedelta(1)).strftime("%d/%m/%Y")
-    uri = '/incidents'
+    uri = '/incidents/slack'
     headers = {'Content-Type': 'application/json', 'Authorization': access_token}
     data = {'type': 'INCIDENTS', 'from_date': yes_date + ' 00:00:01', 'to_date': today_date + ' 00:00:01'}
     print(data)
@@ -40,7 +40,7 @@ def get_today_incidents():
     current_time = datetime.now().date()
     today_date = current_time.strftime("%d/%m/%Y")
     tomorrow_date = (current_time + timedelta(1)).strftime("%d/%m/%Y")
-    uri = '/incidents/'
+    uri = '/incidents/slack'
     headers = {'Content-Type': 'application/json', 'Authorization': access_token}
     data = {'type': 'INCIDENTS', 'from_date': today_date + ' 00:00:01', 'to_date': tomorrow_date + ' 00:00:01'}
     print(data)
